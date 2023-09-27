@@ -10,3 +10,10 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Configuração do Socket Cliente com o Socket Servidor:
 client_socket.connect(("127.0.0.1", 8081))
 print("Connected.")
+
+# Receçao dos Dados até 1024 Bytes de uma vez:
+data = client_socket.recv(1024)
+
+# Descodificação da Mensagem em Bytes e Escrita da Mesma:
+mensagem = data.decode()
+print(mensagem)
