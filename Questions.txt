@@ -1,0 +1,19 @@
+1. Onde estão os dados recebidos do socket?
+Os dados recebidos do socket estão armazenados na váriável "data".
+
+2. Como as mensagens completas são identificadas?
+As mensagem completas são identificadas se o buffer encontrar na sua composição o caracter especial "/n".
+
+3. Quando é...
+
+   - que o buffer foi criado?
+   O buffer foi criado quando adicionamos a data á variável buffer "buffer = buffer + data.decode()".
+
+   - o buffer anexado a?
+   O buffer encontra-se anexao na procura do valor "\n".
+
+   - uma mensagem completa removida do buffer?
+   A mensagem completa é removida do buffer na linha: "buffer = buffer[terminator_pos + 1:]".
+
+4. Qual declaração está a returnar uma única mensagem completa?
+A declaração é: "buffer = buffer[terminator_pos + 1:]".
