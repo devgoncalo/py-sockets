@@ -27,6 +27,13 @@ data = mensagem.encode()
 # Envio da Mensagem já Codificada para o Cliente:
 conection_socket.send(data)
 
+# Receçao dos Dados até 1024 Bytes de uma vez:
+data = conection_socket.recv(1024)
+
+# Descodificação da Mensagem em Bytes e Escrita da Mesma:
+mensagem = data.decode()
+print(mensagem)
+
 # Fechamento e Desconecção do Socket:
 conection_socket.close()
 server_socket.close()

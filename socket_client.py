@@ -18,5 +18,14 @@ data = client_socket.recv(1024)
 mensagem = data.decode()
 print(mensagem)
 
+# Mensagem a ser Enviada para o Servidor:
+mensagem = "Thank you for connecting me!"
+
+# Codificação da Mensagem para uma série de Bytes:
+data = mensagem.encode()
+
+# Envio da Mensagem já Codificada para o Cliente:
+client_socket.send(data)
+
 # Fechamento e Desconecção do Socket:
 client_socket.close()
