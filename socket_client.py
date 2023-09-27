@@ -17,3 +17,6 @@ data = client_socket.recv(1024)
 # Descodificação da Mensagem em Bytes e Escrita da Mesma:
 mensagem = data.decode()
 print(mensagem)
+
+# Fechamento e Desconecção do Socket:
+client_socket.close()

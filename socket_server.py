@@ -26,3 +26,7 @@ data = mensagem.encode()
 
 # Envio da Mensagem já Codificada para o Cliente:
 conection_socket.send(data)
+
+# Fechamento e Desconecção do Socket:
+conection_socket.close()
+server_socket.close()
