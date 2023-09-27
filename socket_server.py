@@ -19,13 +19,24 @@ conection_socket, address = server_socket.accept()
 print("Client Connected.")
 
 # Mensagem a ser Enviada para o Cliente:
-mensagem = "Hello, you are connected!"
+# mensagem = "Hello, you are connected!"
 
 # Codificação da Mensagem para uma série de Bytes:
-data = mensagem.encode()
+# data = mensagem.encode()
 
 # Envio da Mensagem já Codificada para o Cliente:
-conection_socket.send(data)
+# conection_socket.send(data)
+
+# Subsituição da chamada ".send" pela função "send_text"
+
+def send_text(sending_socket, text):
+    # Determinação do Fim da Mensagem com o Caracter Especial (\n):
+    text = text + "\n"
+    data = text.encode()
+    sending_socket.send(data)
+    
+mensagem = "Hello, you are connected!"
+send_text(conection_socket, mensagem)
 
 # Receçao dos Dados até 1024 Bytes de uma vez:
 data = conection_socket.recv(1024)
