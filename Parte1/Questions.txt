@@ -17,3 +17,6 @@ As mensagem completas são identificadas se o buffer encontrar na sua composiç�
 
 4. Qual declaração está a returnar uma única mensagem completa?
 A declaração é: "buffer = buffer[terminator_pos + 1:]".
+
+5. Qual pode ser a desvantagem de user \n como caractere de terminação?
+No caso de strings que precisam do caracter \n para determinar "enter" o mesmo seria removido removendo também o "enter" entre frases.

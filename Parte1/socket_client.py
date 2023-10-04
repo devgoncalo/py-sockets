@@ -4,7 +4,7 @@ import socket
 # Criaçõo de um Socket TCP/IP denominado de "client_socket":
 # Protocolo "AF_INET": Internet Versão 4;
 # Protocolo "SOCK_STREAM": TCP.
-
+     
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Configuração do Socket Cliente com o Socket Servidor:
