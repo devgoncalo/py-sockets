@@ -57,6 +57,16 @@ while(True):
     print(clientMsg)
     print(clientIP)
     
-    # Sending a reply to client
+    # Sending a reply to client:
 
     UDPServerSocket.sendto(bytesToSend, address)
+
+    # Receber Mais do que Strings:
+
+    data = UDPServerSocket.recvfrom(bufferSize)
+
+    messagem = data.decode()
+    parts = messagem.split(",")
+    current_time = float(parts[0])
+    network_name = parts[1]
+    python_version = (parts[2], parts[3], parts[4])
