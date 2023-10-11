@@ -45,28 +45,45 @@ print("The UDP Sever is Up and Listening!")
 
 while(True):
 
-    bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
+    #bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
 
-    message = bytesAddressPair[0]
-    address = bytesAddressPair[1]
+    #message = bytesAddressPair[0]
+    #address = bytesAddressPair[1]
 
-    clientMsg = "Message from Client:{}".format(message)
-    clientIP  = "Client IP Address:{}".format(address)
+    #clientMsg = "Message from Client:{}".format(message)
+    #clientIP  = "Client IP Address:{}".format(address)
     
-    print()
-    print(clientMsg)
-    print(clientIP)
+    #print()
+    #print(clientMsg)
+    #print(clientIP)
     
     # Sending a reply to client:
 
-    UDPServerSocket.sendto(bytesToSend, address)
+    #UDPServerSocket.sendto(bytesToSend, address)
 
     # Receber Mais do que Strings:
 
+    #data = UDPServerSocket.recvfrom(bufferSize)
+
+    #messagem = data.decode()
+    #parts = messagem.split(",")
+    #current_time = float(parts[0])
+    #network_name = parts[1]
+    #python_version = (parts[2], parts[3], parts[4])
+
+    # Serialização:
+
     data = UDPServerSocket.recvfrom(bufferSize)
 
-    messagem = data.decode()
-    parts = messagem.split(",")
-    current_time = float(parts[0])
-    network_name = parts[1]
-    python_version = (parts[2], parts[3], parts[4])
+    print(data.decode())
+
+    # Importação do Pacote Pickle:
+    import pickle
+
+    #Descontrução em Série e Tranformação num Vetor:
+    message = pickle.loads(data)
+
+    current_time = message[0]
+    network_name = message[1]
+    python_version = message[2]
+

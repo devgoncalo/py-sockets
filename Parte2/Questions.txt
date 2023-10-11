@@ -1,2 +1,6 @@
 1. Como isso funciona (correção de erros) e como reduz os erros de transmissão?
-A correcção de erros e a redução de erros de transmissão são processos importantes para garantir a qualidade da comunicação. A correcção de erros envolve a identificação e correção de erros cometidos durante a transmissão de dados, enquanto a redução de erros de transmissão envolve a implementação de técnicas para reduzir a quantidade de erros que ocorrem durante a transmissão. Algumas técnicas utilizadas incluem a codificação de erros, a redundância de dados e a autocorreção de erros.  
+A correcção de erros e a redução de erros de transmissão são processos importantes para garantir a qualidade da comunicação. A correcção de erros envolve a identificação e correção de erros cometidos durante a transmissão de dados, enquanto a redução de erros de transmissão envolve a implementação de técnicas para reduzir a quantidade de erros que ocorrem durante a transmissão. Algumas técnicas utilizadas incluem a codificação de erros, a redundância de dados e a autocorreção de erros. 
+
+2. Se a variável network_name tivesse um virgula a partição da mensagem ficaria errada pois usamos a virgula para defenir quando a varaivel acaba (separar).
+
+3. A serialização poderá ter uma desvtangem quando por exemplo são demasiadas varáveis construido um vetor super extenso e pesado.

@@ -14,7 +14,7 @@ bufferSize          = 1024
 
 # Envio da Mensagem para o Servidor Usando o Socket UDP:
 
-UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+#UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
 # Recebimento da Mengsaem do Servidor:
 
@@ -51,4 +51,15 @@ message = message + python_version[0] + "," + python_version[1] + "," + python_v
 data = message.encode()
 
 # Envio da Mensagem:
+UDPClientSocket.sendto(data, serverAddressPort)
+
+# Serialização:
+
+# Importação do Pacote Pickle:
+import pickle
+
+message = (current_time, network_name, python_version)
+data = pickle.dumps(message)
+
+# Envio da Mensagem Serializada com a Biblioteca Pickles:
 UDPClientSocket.sendto(data, serverAddressPort)
