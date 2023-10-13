@@ -1,7 +1,7 @@
 # Importação do Módulo de Socket:
 import socket
 
-# Criaçõo de um Socket UDP denominado de "udp_client":
+# Criação de um Socket UDP denominado de "udp_client":
 # Protocolo "AF_INET": Internet Versão 4;
 # Protocolo "SOCK_DGRAM": UDP.
 
